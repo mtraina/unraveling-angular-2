@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <h1>My Diving Gear</h1>
+    <div *ngFor="let item of gearItems">
+      <div class="row" style="padding: 4px;">
+        <div class="col-sm-12">
+          <gear-item [gear]="item"
+            [ywSelectable]="'lightblue'" [ywId]="item.id"
+            (onSelectionChanged)="selected($event)">
+          </gear-item>
+        </div>
+      </div>
+    </div>
+</div>

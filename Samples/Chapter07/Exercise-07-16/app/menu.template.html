@@ -1,0 +1,15 @@
+<div *ngFor="let section of sections; let l=last;">
+  <div class="sectionTitle"
+    [class.sectionLast]="l"
+    (click)="selectSection(section)">
+    {{section.title}}
+  </div>
+  <div *ngIf="section.active">
+    <div *ngFor="let item of section.items; let l=last"
+      class="itemTitle"
+      [class.itemLast]="l"
+      (click)="selectItem(item)"> 
+      {{item.title}}
+    </div>
+  </div>
+</div>

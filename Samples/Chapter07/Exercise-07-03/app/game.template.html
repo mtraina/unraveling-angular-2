@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h4>Tokens to collect: {{tokens}}</h4>
+    <button class="btn btn-sm"
+      [disabled]="tokens > 100"
+      (click)="tokens=tokens+1">
+      +
+     </button> 
+    <button class="btn btn-sm"
+      [disabled]="tokens < 1"
+      (click)="tokens=tokens-1">
+      -
+     </button> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <h4>Tokens collected: {{collected}}
+      <span *ngIf="collected >= tokens">
+        [Done!]
+      </span>
+    </h4>
+  </div>
+</div>
+<yw-diver *ngFor="let diver of divers"
+  [name]="diver"
+  [parent]="getMe()">
+</yw-diver>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dive Log (Angular)</title>
+  <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" 
+    rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Attribute vs Property</h1>
+    <input id= "inp" type="text" value="John" onkeyup="onInputChanged()"/>
+    <hr/>
+    <h2 id="attr"></h2>
+    <h2 id="prop"></h2>
+  </div>
+  <script>
+    function onInputChanged() {
+      var input = document.getElementById("inp");
+      var attr = document.getElementById("attr");
+      var prop = document.getElementById("prop");
+      attr.textContent = "Attribute: " + input.getAttribute("value");
+      prop.textContent = "Property: " + input.value;
+    }
+
+    onInputChanged();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"message-board.component.js","sourceRoot":"","sources":["message-board.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAwB,eAAe,CAAC,CAAA;AAiBxC;IAAA;QACE,aAAQ,GAAa,EAAE,CAAC;IAC1B,CAAC;IAjBD;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,aAAa;YACvB,QAAQ,EAAE,mPAUT;YACD,MAAM,EAAE,CAAC,UAAU,CAAC;SACrB,CAAC;;6BAAA;IAGF,4BAAC;AAAD,CAAC,AAFD,IAEC;AAFY,6BAAqB,wBAEjC,CAAA"}

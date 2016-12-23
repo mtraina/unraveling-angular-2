@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <h1>Dive Instructions</h1>
+  <button class="btn btn-primary"
+    (click)="isNightDive=!isNightDive">
+    Toggle dive type
+  </button>
+  <div class="row" [style.margin-top.px]="16">
+    <div class="col-sm-12">
+      <div [hidden]="!isNightDive">
+        <h2>Daylight Dive Rules</h2>
+        <ul>
+          <li>Maximum depth: 60 feet</li>
+          <li>Maximum time: 30 minutes</li>
+          <li>Use torch</li>
+          <li>Diving pairs need a backup torch, too</li>
+        </ul>
+      </div>
+      <div [hidden]="isNightDive">
+        <h2>Night Dive Rules</h2>
+        <ul>
+          <li>Maximum depth: 130 feet</li>
+          <li>Maximum time: 60 minutes</li>
+          <li>Turn back at half air!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

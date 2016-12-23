@@ -1,0 +1,14 @@
+<div>
+  <menu-section *ngFor="let section of sections; let l=last;" 
+    [title]="section.title"
+    [last]="l"
+    (click)="selectSection(section)">
+    <div *ngIf="section.active">
+      <menu-item *ngFor="let item of section.items; let l=last" 
+        [title]="item.title"
+        [last]="l"
+        (onSelected)="selectItem($event)">
+      </menu-item>
+    </div>
+  </menu-section>
+</div>

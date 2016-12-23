@@ -1,0 +1,1 @@
+{"version":3,"file":"log-board.component.js","sourceRoot":"","sources":["log-board.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA+B,eAAe,CAAC,CAAA;AAuB/C;IAAA;IAEA,CAAC;IADC;QAAC,YAAK,EAAE;;uDAAA;IAtBV;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,WAAW;YACrB,QAAQ,EAAE,6IAOT;YACD,MAAM,EAAE,CAAC,+MASR,CAAC;SACH,CAAC;;yBAAA;IAGF,wBAAC;AAAD,CAAC,AAFD,IAEC;AAFY,yBAAiB,oBAE7B,CAAA"}

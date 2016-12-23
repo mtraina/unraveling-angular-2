@@ -1,0 +1,5 @@
+User ID
+b3f15a1b-8d0e-4e80-8b96-c36e66547481
+
+User Secret
+d6deac91eba6453bb6ad78c61e8052b616d2d830db20463ea6b4d8be918e29df6a0a4a1ebdab46eb9cdd6b7ab3191908

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h1>My Diving Gear</h1>
+  <div class="row">
+    <div *ngFor="let item of gearItems">
+      <div class="col-sm-12" >
+        <gear-item [gear]="item"></gear-item>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12" [style.margin-top.px]="8">
+      <button (click)="requery()">
+        Requery
+      </button>
+      <button (click)="reverse()">
+        Reverse
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12" [style.margin-top.px]="8">
+      <h3>#of queries: {{queryCount}}</h3>
+      <h3>#of changes: {{listChangeCount}}</h3>
+      <h3>#of changed items: {{itemChangeCount}}</h3>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<form>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="site">Dive site</label>
+        <input class="form-control" id="site" 
+          placeholder="dive site">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input class="form-control" id="location" 
+          placeholder="location">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group">
+        <label for="depth">Max. depth</label>
+        <input class="form-control" id="depth">
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group">
+        <label for="time">Bottom time</label>
+        <input class="form-control" id="time">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="favorite" checked>
+      Mark as favorite
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Special dive</label>
+    <div class="radio"
+      *ngFor="let diveType of specialDives">
+      <label>
+        <input type="radio" name="special" [value]="diveType">
+        {{diveType}}
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comments">Comments</label>
+    <textarea class="form-control" id="comments" rows="5">
+    </textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">
+    Submit
+  </button>
+</form>

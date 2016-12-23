@@ -1,0 +1,39 @@
+.sectionTitle {
+  background-color: navy;
+  border: 1px solid #808060;
+  border-bottom: 0;
+  color: white;
+  font-size: 1.5em;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.maroonSection {
+  background-color: maroon;
+}
+
+.sectionTitle:hover {
+  background-color: #404080;
+}
+
+.sectionLast {
+  border-bottom: 1px solid #808060;
+}
+
+.itemTitle {
+  background-color: #e0e0e0;
+  border: 1px solid darkgray;
+  border-bottom: 0;
+  color: navy;
+  font-size: 1.2em;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.itemTitle:hover {
+  background-color: #c0c0c0;
+}
+
+.itemLast {
+  border-bottom: 1px solid darkgray;
+}

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <h1>Dive Instructions</h1>
+  <h3>Dive type: {{diveType}}</h3>
+  <button class="btn btn-primary"
+    (click)="toggleDiveType()">
+    Toggle dive type
+  </button>
+  <div class="row" [style.margin-top.px]="16">
+    <div class="col-sm-12">
+      <h2>Rules</h2>
+      <ul [ywRule]="diveType">
+        <li *ywNight>Maximum depth: 60 feet</li>
+        <li *ywNight>Maximum time: 30 minutes</li>
+        <li *ywNight>Use torch</li>
+        <li *ywNight>Diving pairs need a backup torch, too</li>
+        <li *ywDay>Maximum depth: 130 feet</li>
+        <li *ywDay>Maximum time: 60 minutes</li>
+        <li *ywDay>Turn back at half air!</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Login to Younderwater</h1>
+  <button class="btn btn-default" 
+    (click)="login('User')"
+    [disabled]="authService.loggedInUser">
+    Login as User
+  </button>
+  <button class="btn btn-default" 
+    (click)="login('Admin')"
+    [disabled]="authService.loggedInUser">
+    Login as Admin
+  </button>
+  <button class="btn btn-default"
+    (click)="logout()"
+    [disabled]="!authService.loggedInUser">
+    Logout
+  </button>
+  <div class="row" [style.margin-top.px]="12">
+    <div class="col-sm-12">
+      <img [hidden]="!inProgress" src="images/progressring.gif" />
+    </div>
+  </div>
+</div>

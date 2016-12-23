@@ -1,0 +1,11 @@
+.evenRow {
+  background-color: #dddddd;
+}
+
+.topRow {
+  border-top: 2px solid #808080;
+}
+
+.bottomRow {
+  border-bottom: 2px solid #808080;
+}

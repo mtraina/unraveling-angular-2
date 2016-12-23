@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <h1>The Big Diving Guide</h1>
+  <div class="row" [style.margin-bottom.px]="12">
+    <div class="col-sm-12">
+      <button class="btn btn-default"
+        [class.btn-primary]="currentLevel==1"
+        (click)="currentLevel=1">
+        1
+      </button>
+      <button class="btn btn-default"
+        [class.btn-primary]="currentLevel==2"
+        (click)="currentLevel=2">
+        2
+      </button>
+      <button class="btn btn-default"
+        [class.btn-primary]="currentLevel==3"
+        (click)="currentLevel=3">
+        3
+      </button>
+    </div>
+  </div>
+  <yw-toc [level]="currentLevel">
+    <header>Table of Contents</header>
+    <h1>Introduction</h1>
+    <h2>Scuba Basics</h2>
+    <h3>Volume</h3>
+    <h3>Pressure</h3>
+    <h3>Depth</h3>
+    <h2>The Environment</h2>
+    <h2>Open Water Certifications</h2>
+    <h3>Open Water Diver</h3>
+    <h3>Advanced Open Water Diver</h3>
+    <h3>Rescue Diver</h3>
+    <h3>Dive Master</h3>
+  </yw-toc>
+</div>
