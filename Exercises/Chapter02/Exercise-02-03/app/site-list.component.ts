@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {DiveSite} from './dive-site';
 
 @Component({
@@ -6,5 +6,10 @@ import {DiveSite} from './dive-site';
   templateUrl: 'app/site-list.template.html'
 })
 export class SiteListComponent {
-  sites = DiveSite.FavoriteSites;
+  @Input() sites: DiveSite[];
+  @Output() onAdd = new EventEmitter();
+
+  add(){
+    this.onAdd.emit(null);
+  }
 }
