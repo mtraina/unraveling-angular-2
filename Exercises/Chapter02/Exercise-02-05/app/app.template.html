@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <h1>Dive Site Maintenance</h1>
+    <site-list-view *ngIf="currentView == 'list'"
+        [sites]="sites" 
+        (onAdd)="startAdd()">
+    </site-list-view>
+    <add-site-view *ngIf="currentView == 'add'"
+        [siteId] = "newSiteId"
+        (onAdded)="siteAdded($event)" 
+        (onCancel)="navigateTo('list')">
+    </add-site-view>
+</div>
