@@ -8,8 +8,13 @@ import {DiveSite} from './dive-site';
 export class SiteListComponent {
   @Input() sites: DiveSite[];
   @Output() onAdd = new EventEmitter();
+  @Output() onEdit = new EventEmitter<DiveSite>();
 
   add(){
     this.onAdd.emit(null);
+  }
+
+  edit(site: DiveSite){
+    this.onEdit.emit(site);
   }
 }
