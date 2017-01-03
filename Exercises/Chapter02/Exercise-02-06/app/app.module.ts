@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {SiteListComponent} from './site-list.component';
 import {AddSiteComponent} from './add-site.component';
 import {EditSiteComponent} from './edit-site.component';
+import {DeleteSiteComponent} from './delete-site.component';
 
 @NgModule({
   imports: [BrowserModule],
@@ -12,7 +13,8 @@ import {EditSiteComponent} from './edit-site.component';
     AppComponent,
     SiteListComponent,
     AddSiteComponent,
-    EditSiteComponent
+    EditSiteComponent,
+    DeleteSiteComponent
   ],
   bootstrap: [AppComponent]
 })

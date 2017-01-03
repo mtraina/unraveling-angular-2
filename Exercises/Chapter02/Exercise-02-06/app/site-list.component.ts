@@ -9,6 +9,7 @@ export class SiteListComponent {
   @Input() sites: DiveSite[];
   @Output() onAdd = new EventEmitter();
   @Output() onEdit = new EventEmitter<DiveSite>();
+  @Output() onDelete = new EventEmitter<DiveSite>();
 
   add(){
     this.onAdd.emit(null);
@@ -16,5 +17,9 @@ export class SiteListComponent {
 
   edit(site: DiveSite){
     this.onEdit.emit(site);
+  }
+
+  delete(site: DiveSite){
+    this.onDelete.emit(site);
   }
 }

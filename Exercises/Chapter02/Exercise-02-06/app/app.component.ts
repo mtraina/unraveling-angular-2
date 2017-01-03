@@ -37,4 +37,17 @@ export class AppComponent {
         }
         this.navigateTo('list');
     }
+
+    startDelete(site: DiveSite) {
+        this.currentSite = site;
+        this.navigateTo('delete');
+    }
+
+    siteDeleted() {
+        var siteIndex = this.sites.indexOf(this.currentSite);
+        if (siteIndex >= 0) {
+            this.sites.splice(siteIndex, 1);
+        }
+        this.navigateTo('list');
+    }
 }
