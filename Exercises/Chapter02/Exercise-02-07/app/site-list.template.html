@@ -6,7 +6,8 @@
   </div>
 </div>
 <h2>List of Dive Sites</h2>
-<div class="row" *ngFor="let site of sites">
+<div class="row" *ngFor="let site of sites; let i=index" 
+    [ngStyle]="{'background-color': i%2 == 0 ? '#dddddd' : 'inherit'}">
   <div class="col-sm-8">
     <h4>{{site.id}}: {{site.name}}</h4>
   </div>
