@@ -1,0 +1,23 @@
+<h3>Edit the name of the dive site:</h3>
+<div class="row">
+  <div class="col-sm-6">
+    <input #siteNameBox class="form-control input-lg" type="text"
+      [value]="site.name"
+      placeholder="site name" 
+      (keyup)="site.name=siteNameBox.value"
+      (keyup.enter)="saved()" />
+  </div>
+</div>
+<div class="row" style="margin-top: 12px;">
+  <div class="col-sm-6">
+    <button class="btn btn-success btn"
+      (click)="saved()"
+      [disabled]="!site.name">
+      Save
+    </button>
+    <button class="btn btn-warning btn"
+      (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+</div>
