@@ -1,25 +1,30 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {DiveSite} from './dive-site';
+import {SiteManagementService} from './site-management.service';
 
 @Component({
   selector: 'site-list-view',
   templateUrl: 'app/site-list.template.html'
 })
 export class SiteListComponent {
-  @Input() sites: DiveSite[];
+  sites: DiveSite[];
   @Output() onAdd = new EventEmitter();
-  @Output() onEdit = new EventEmitter<DiveSite>();
-  @Output() onDelete = new EventEmitter<DiveSite>();
+  @Output() onEdit = new EventEmitter<number>();
+  @Output() onDelete = new EventEmitter<number>();
+
+  constructor(private siteService: SiteManagementService){
+    this.sites = siteService.getAllSites();
+  }
 
   add(){
     this.onAdd.emit(null);
   }
 
-  edit(site: DiveSite){
-    this.onEdit.emit(site);
+  edit(siteId: number){
+    this.onEdit.emit(siteId);
   }
 
-  delete(site: DiveSite){
-    this.onDelete.emit(site);
+  delete(siteId: number){
+    this.onDelete.emit(siteId);
   }
 }
