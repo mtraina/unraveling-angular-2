@@ -1,4 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+
 import {DiveSite} from './dive-site';
 import {SiteManagementService} from './site-management.service';
 
@@ -8,10 +10,16 @@ import {SiteManagementService} from './site-management.service';
 })
 export class EditSiteComponent {
     private _siteId: number;
-    @Output() onClosed = new EventEmitter();
     siteName: string;
 
-    constructor(private siteService: SiteManagementService){}
+    constructor(
+        private siteService: SiteManagementService, 
+        private router: Router,
+        private route: ActivatedRoute
+        ){
+            this._siteId = this.route.snapshot.params['id'];
+            this.siteName = this.siteService.getSiteById(this._siteId).name;
+        }
 
     @Input() set siteId(id: number){
         this._siteId = id;
@@ -20,10 +28,6 @@ export class EditSiteComponent {
 
     save(){
         this.siteService.saveSite({id: this._siteId, name: this.siteName});
-        this.onClosed.emit(null);
-    }
-
-    cancel(){
-        this.onClosed.emit(null);
+        this.router.navigate(['/list']);
     }
 }
