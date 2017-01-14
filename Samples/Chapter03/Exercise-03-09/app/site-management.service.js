@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var dive_site_1 = require('./dive-site');
+var core_1 = require("@angular/core");
+var dive_site_1 = require("./dive-site");
 var SiteManagementService = (function () {
     function SiteManagementService() {
         this.sites = dive_site_1.DiveSite.FavoriteSites.slice(0);
@@ -43,11 +43,11 @@ var SiteManagementService = (function () {
             }
         }
     };
-    SiteManagementService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], SiteManagementService);
     return SiteManagementService;
 }());
+SiteManagementService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], SiteManagementService);
 exports.SiteManagementService = SiteManagementService;
 //# sourceMappingURL=site-management.service.js.map

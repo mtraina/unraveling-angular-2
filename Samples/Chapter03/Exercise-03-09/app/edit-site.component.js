@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var site_management_service_1 = require('./site-management.service');
+var core_1 = require("@angular/core");
+var site_management_service_1 = require("./site-management.service");
 var EditSiteComponent = (function () {
     function EditSiteComponent(siteService) {
         this.siteService = siteService;
@@ -30,23 +30,23 @@ var EditSiteComponent = (function () {
     EditSiteComponent.prototype.cancel = function () {
         this.onClosed.emit(null);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number), 
-        __metadata('design:paramtypes', [Number])
-    ], EditSiteComponent.prototype, "siteId", null);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], EditSiteComponent.prototype, "onClosed", void 0);
-    EditSiteComponent = __decorate([
-        core_1.Component({
-            selector: 'edit-site-view',
-            templateUrl: 'app/edit-site.template.html'
-        }), 
-        __metadata('design:paramtypes', [site_management_service_1.SiteManagementService])
-    ], EditSiteComponent);
     return EditSiteComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number),
+    __metadata("design:paramtypes", [Number])
+], EditSiteComponent.prototype, "siteId", null);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], EditSiteComponent.prototype, "onClosed", void 0);
+EditSiteComponent = __decorate([
+    core_1.Component({
+        selector: 'edit-site-view',
+        templateUrl: 'app/edit-site.template.html'
+    }),
+    __metadata("design:paramtypes", [site_management_service_1.SiteManagementService])
+], EditSiteComponent);
 exports.EditSiteComponent = EditSiteComponent;
 //# sourceMappingURL=edit-site.component.js.map

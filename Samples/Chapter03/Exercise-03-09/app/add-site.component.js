@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var site_management_service_1 = require('./site-management.service');
+var core_1 = require("@angular/core");
+var site_management_service_1 = require("./site-management.service");
 var AddSiteComponent = (function () {
     function AddSiteComponent(siteService) {
         this.siteService = siteService;
@@ -22,18 +22,18 @@ var AddSiteComponent = (function () {
     AddSiteComponent.prototype.cancel = function () {
         this.onClosed.emit(null);
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], AddSiteComponent.prototype, "onClosed", void 0);
-    AddSiteComponent = __decorate([
-        core_1.Component({
-            selector: 'add-site-view',
-            templateUrl: 'app/add-site.template.html'
-        }), 
-        __metadata('design:paramtypes', [site_management_service_1.SiteManagementService])
-    ], AddSiteComponent);
     return AddSiteComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], AddSiteComponent.prototype, "onClosed", void 0);
+AddSiteComponent = __decorate([
+    core_1.Component({
+        selector: 'add-site-view',
+        templateUrl: 'app/add-site.template.html'
+    }),
+    __metadata("design:paramtypes", [site_management_service_1.SiteManagementService])
+], AddSiteComponent);
 exports.AddSiteComponent = AddSiteComponent;
 //# sourceMappingURL=add-site.component.js.map
