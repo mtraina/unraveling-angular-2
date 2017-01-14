@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-12">
+    <button class="btn btn-primary btn-lg" (click)="add()">
+      Add new site
+    </button>
+  </div>
+</div>
+<h2>List of Dive Sites</h2>
+<div class="row" *ngFor="let site of sites; let e=even; let f=first; let l=last"
+  ywActionable='#6666ee' (onAction)="edit(site.id)"
+  [ngClass]="{ evenRow: e }"
+  [class.topRow]="f"
+  [class.bottomRow]="l">
+  <div class="col-sm-8">
+    <h4>{{site.id}}: {{site.name}}</h4>
+  </div>
+  <div class="col-sm-4" style="margin-top: 5px;">
+    <div class="pull-right">
+      <button class="btn btn-warning btn-sm"
+        (click)="edit(site.id)">
+        Edit
+      </button>
+      <button class="btn btn-danger btn-sm"
+        (click)="delete(site.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
