@@ -6,10 +6,16 @@ import {SiteListComponent} from './site-list.component';
 import {AddSiteComponent} from './add-site.component';
 import {EditSiteComponent} from './edit-site.component';
 import {DeleteSiteComponent} from './delete-site.component';
+
 import {ActionableDirective} from './actionable.directives';
+import {SiteManagementService} from './site-management.service';
+import {routingModule} from './app.routes';
 
 @NgModule({
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    routingModule
+  ],
   declarations: [
     AppComponent,
     SiteListComponent,
@@ -18,6 +24,7 @@ import {ActionableDirective} from './actionable.directives';
     DeleteSiteComponent,
     ActionableDirective
   ],
+  providers: [SiteManagementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

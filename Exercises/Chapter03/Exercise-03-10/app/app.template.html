@@ -1,5 +1,6 @@
 <div class="container-fluid">
     <h1>Dive Site Maintenance</h1>
+    <router-outlet></router-outlet>
     <div [ngSwitch]="currentView">
         <site-list-view *ngSwitchDefault
             (onAdd)="navigateTo('add')"
