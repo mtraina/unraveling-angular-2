@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 
 import {DiveSite} from './dive-site';
@@ -15,15 +15,10 @@ export class EditSiteComponent {
     constructor(
         private siteService: SiteManagementService, 
         private router: Router,
-        private route: ActivatedRoute
-        ){
-            this._siteId = this.route.snapshot.params['id'];
-            this.siteName = this.siteService.getSiteById(this._siteId).name;
-        }
+        private route: ActivatedRoute){
 
-    @Input() set siteId(id: number){
-        this._siteId = id;
-        this.siteName = this.siteService.getSiteById(id).name;
+        this._siteId = this.route.snapshot.params['id'];
+        this.siteName = this.siteService.getSiteById(this._siteId).name;
     }
 
     save(){
