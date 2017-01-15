@@ -14,7 +14,11 @@ var DiveLogApi = (function () {
     function DiveLogApi() {
     }
     DiveLogApi.prototype.getDives = function () {
-        return dive_log_entry_1.DiveLogEntry.StockDives;
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve(dive_log_entry_1.DiveLogEntry.StockDives);
+            }, 1000);
+        });
     };
     return DiveLogApi;
 }());

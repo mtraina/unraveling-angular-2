@@ -17,9 +17,10 @@ export class DiveLogComponent {
   refreshDives() {
     this.loading = true;
     this.dives = [];
-    setTimeout(() => {
-      this.dives = this.api.getDives();
+    
+    this.api.getDives().then(data => {
+      this.dives = data;
       this.loading = false;
-    }, 1000);
+    });
   }
 }

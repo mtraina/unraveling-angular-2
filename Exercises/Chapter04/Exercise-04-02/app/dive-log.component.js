@@ -19,10 +19,10 @@ var DiveLogComponent = (function () {
         var _this = this;
         this.loading = true;
         this.dives = [];
-        setTimeout(function () {
-            _this.dives = _this.api.getDives();
+        this.api.getDives().then(function (data) {
+            _this.dives = data;
             _this.loading = false;
-        }, 1000);
+        });
     };
     return DiveLogComponent;
 }());
