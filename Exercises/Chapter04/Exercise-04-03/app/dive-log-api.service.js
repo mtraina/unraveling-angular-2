@@ -10,21 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var dive_log_entry_1 = require("./dive-log-entry");
-var DiveLogApi = (function () {
+var DiveLogApi = DiveLogApi_1 = (function () {
     function DiveLogApi() {
     }
     DiveLogApi.prototype.getDives = function () {
         return new Promise(function (resolve, reject) {
             setTimeout(function () {
-                resolve(dive_log_entry_1.DiveLogEntry.StockDives);
+                if (DiveLogApi_1.counter % 3 == 0) {
+                    reject("Error: Call counter is " + DiveLogApi_1.counter);
+                }
+                else {
+                    resolve(dive_log_entry_1.DiveLogEntry.StockDives);
+                }
             }, 1000);
         });
     };
     return DiveLogApi;
 }());
-DiveLogApi = __decorate([
+DiveLogApi.counter = 0;
+DiveLogApi = DiveLogApi_1 = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [])
 ], DiveLogApi);
 exports.DiveLogApi = DiveLogApi;
+var DiveLogApi_1;
 //# sourceMappingURL=dive-log-api.service.js.map

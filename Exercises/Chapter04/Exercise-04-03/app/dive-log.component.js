@@ -14,13 +14,19 @@ var DiveLogComponent = (function () {
     function DiveLogComponent(api) {
         this.api = api;
         this.loading = false;
+        this.errorMessage = null;
     }
     DiveLogComponent.prototype.refreshDives = function () {
         var _this = this;
         this.loading = true;
         this.dives = [];
-        this.api.getDives().then(function (data) {
+        this.api.getDives()
+            .then(function (data) {
             _this.dives = data;
+            _this.loading = false;
+        })
+            .catch(function (errMsg) {
+            _this.errorMessage = errMsg;
             _this.loading = false;
         });
     };

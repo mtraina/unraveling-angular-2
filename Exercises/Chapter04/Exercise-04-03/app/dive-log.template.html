@@ -14,6 +14,13 @@
         (keyup)="0" />
     </div>
   </div>
+
+  <div class="row" [hidden]="!errorMessage">
+    <div class="col-sm-12">
+      <h3 class="text-danger">{{errorMessage}}</h3>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-sm-4"
       *ngFor="let dive of dives | contentFilter:searchBox.value">

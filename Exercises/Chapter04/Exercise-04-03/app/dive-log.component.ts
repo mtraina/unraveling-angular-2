@@ -10,6 +10,7 @@ import {DiveLogApi} from './dive-log-api.service'
 export class DiveLogComponent {
   loading = false;
   dives: DiveLogEntry[];
+  errorMessage = null;
 
   constructor(private api: DiveLogApi) {
   }
@@ -18,8 +19,13 @@ export class DiveLogComponent {
     this.loading = true;
     this.dives = [];
     
-    this.api.getDives().then(data => {
-      this.dives = data;
+    this.api.getDives()
+      .then(data => {
+        this.dives = data;
+        this.loading = false;
+      }) 
+      .catch(errMsg => {
+      this.errorMessage = errMsg;
       this.loading = false;
     });
   }
