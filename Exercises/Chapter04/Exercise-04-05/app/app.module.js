@@ -11,9 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
-var dive_log_component_1 = require("./dive-log.component");
-var content_filter_pipe_1 = require("./content-filter.pipe");
-var dive_log_api_service_1 = require("./dive-log-api.service");
+var locations_component_1 = require("./locations.component");
+var locations_api_service_1 = require("./locations-api.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,12 +24,9 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             http_1.HttpModule
         ],
-        declarations: [
-            dive_log_component_1.DiveLogComponent,
-            content_filter_pipe_1.ContentFilterPipe
-        ],
-        providers: [dive_log_api_service_1.DiveLogApi],
-        bootstrap: [dive_log_component_1.DiveLogComponent]
+        declarations: [locations_component_1.LocationsComponent],
+        providers: [locations_api_service_1.LocationsApiService],
+        bootstrap: [locations_component_1.LocationsComponent]
     }),
     __metadata("design:paramtypes", [])
 ], AppModule);
