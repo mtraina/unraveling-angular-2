@@ -9,29 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var dive_log_entry_1 = require("./dive-log-entry");
-var DiveLogApi = DiveLogApi_1 = (function () {
-    function DiveLogApi() {
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/toPromise");
+var DiveLogApi = (function () {
+    function DiveLogApi(http) {
+        this.http = http;
+        this.DIVE_LOG_API_URL = 'http://unraveling-ng.azurewebsites.net/api/backendtest/dives';
     }
     DiveLogApi.prototype.getDives = function () {
-        return new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                if (DiveLogApi_1.counter % 3 == 0) {
-                    reject("Error: Call counter is " + DiveLogApi_1.counter);
-                }
-                else {
-                    resolve(dive_log_entry_1.DiveLogEntry.StockDives);
-                }
-            }, 1000);
+        return this.http.get(this.DIVE_LOG_API_URL).toPromise()
+            .then(function (res) { return res.json(); })
+            .catch(function (err) {
+            var errMsg = (err.message)
+                ? err.message
+                : err.status ? err.status + ": " + err.statusText : 'Server error';
+            console.error(errMsg);
+            return Promise.reject(errMsg);
         });
     };
+    ;
     return DiveLogApi;
 }());
-DiveLogApi.counter = 0;
-DiveLogApi = DiveLogApi_1 = __decorate([
+DiveLogApi = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [http_1.Http])
 ], DiveLogApi);
 exports.DiveLogApi = DiveLogApi;
-var DiveLogApi_1;
 //# sourceMappingURL=dive-log-api.service.js.map
