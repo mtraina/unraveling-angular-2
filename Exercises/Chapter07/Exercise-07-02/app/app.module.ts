@@ -3,14 +3,14 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {GameComponent} from './game.component';
-//import {DiverComponent} from './diver.component';
+import {DiverComponent} from './diver.component';
 
 @NgModule({
   imports: [BrowserModule],
   declarations: [
     AppComponent,
     GameComponent,
-    //DiverComponent
+    DiverComponent
   ],
   bootstrap: [AppComponent]
 })
