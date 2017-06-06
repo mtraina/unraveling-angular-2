@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
   template: `
     <div class="container-fluid">
       <h1>Find Underwater Token Game</h1>
-      <!-- <yw-game></yw-game> -->
+      <yw-game></yw-game>
     </div>
   `
 })
