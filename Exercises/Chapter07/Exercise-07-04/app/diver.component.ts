@@ -8,8 +8,9 @@ import {GameComponent} from './game.component';
 })
 export class DiverComponent {
   @Input() name: string;
-  @Input() parent: GameComponent;
   tokensFound = 0;
+
+  constructor(private parent: GameComponent){}
 
   found() {
     this.tokensFound++;
