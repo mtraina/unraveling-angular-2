@@ -1,0 +1,17 @@
+<div class="row"
+  [style.padding-top.px]="4">
+  <div class="col-sm-2">
+  {{name}}: {{tokensFound}}
+  </div>
+  <div class="col-sm-4">
+    <button class="btn btn-xs btn-success"
+      (click)="found()">
+      Found
+    </button>
+    <button class="btn btn-xs btn-danger"
+      [disabled]="tokensFound <= 0"
+      (click)="lost()">
+      Lost
+    </button>
+  </div>
+</div>
