@@ -8,8 +8,19 @@ import {MessageBusService} from './message-bus.service';
   templateUrl: 'app/diver.template.html'
 })
 export class DiverComponent {
-  @Input() name: string;
+  private _name: string;
   tokensFound = 0;
+
+  @Input() get name(){
+    return this._name;
+  }
+
+  set name(value: string){
+    this._name = value;
+    if(this.messenger){
+      this.messenger.sendMessage(`Diver name set => ${value}`);
+    }
+  }
 
   constructor(
     private parent: GameComponent,
