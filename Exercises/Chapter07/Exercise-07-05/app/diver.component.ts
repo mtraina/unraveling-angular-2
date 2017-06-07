@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, Optional} from '@angular/core';
 import {Input, Output, EventEmitter} from '@angular/core';
 import {GameComponent} from './game.component';
+import {MessageBusService} from './message-bus.service';
 
 @Component({
   selector: 'yw-diver',
@@ -10,15 +11,24 @@ export class DiverComponent {
   @Input() name: string;
   tokensFound = 0;
 
-  constructor(private parent: GameComponent){}
+  constructor(
+    private parent: GameComponent,
+    @Optional() private messenger: MessageBusService){}
 
   found() {
-    this.tokensFound++;
-    this.parent.tokenFound(1);
+    this.updateTokens(1);
   }
 
   lost() {
-    this.tokensFound--;
-    this.parent.tokenFound(-1);
+    this.updateTokens(-1);
+  }
+
+  updateTokens(count: number) {
+    this.tokensFound += count;
+    if (this.messenger) {
+      this.messenger.sendMessage(
+        `${this.name} ==> ${count}`);
+    }
+    this.parent.tokenFound(count);
   }
 }

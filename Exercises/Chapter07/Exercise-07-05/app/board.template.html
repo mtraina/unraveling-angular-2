@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row" [style.margin-top.px]="8">
+    <div class="col-sm-12"
+      [style.border]="'2px solid darkgrey'"
+      [style.padding.px]="8">
+      <ul [style.padding-left]="0">
+        <li *ngFor="let message of messages"
+          [style.list-style]="'none'">
+          {{message}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
