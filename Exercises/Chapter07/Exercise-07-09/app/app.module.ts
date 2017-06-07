@@ -10,6 +10,6 @@ import {SuperbComponent} from './superb.component';
     AcmeComponent,
     SuperbComponent
   ],
-  bootstrap: [AcmeComponent]
+  bootstrap: [SuperbComponent]
 })
 export class AppModule { }
