@@ -1,4 +1,4 @@
-import {Component, Optional} from '@angular/core';
+import {Component, Optional, OnChanges} from '@angular/core';
 import {Input, Output, EventEmitter} from '@angular/core';
 import {GameComponent} from './game.component';
 import {MessageBusService} from './message-bus.service';
@@ -7,13 +7,20 @@ import {MessageBusService} from './message-bus.service';
   selector: 'yw-diver',
   templateUrl: 'app/diver.template.html'
 })
-export class DiverComponent {
+export class DiverComponent implements OnChanges {
   @Input() name: string;
   tokensFound = 0;
 
   constructor(
     private parent: GameComponent,
     @Optional() private messenger: MessageBusService){}
+
+  ngOnChanges(changes){
+    const nameChange = changes['name'];
+    if(nameChange && this.messenger){
+      this.messenger.sendMessage(`Diver name set => ${nameChange.currentValue}`);
+    }
+  }
 
   found() {
     this.updateTokens(1);
