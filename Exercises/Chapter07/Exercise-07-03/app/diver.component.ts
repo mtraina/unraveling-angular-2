@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Input, Output, EventEmitter} from '@angular/core';
+import {GameComponent} from './game.component';
 
 @Component({
   selector: 'yw-diver',
@@ -7,16 +8,16 @@ import {Input, Output, EventEmitter} from '@angular/core';
 })
 export class DiverComponent {
   @Input() name: string;
-  @Output() onTokenFound = new EventEmitter<number>();
+  @Input() parent: GameComponent;
   tokensFound = 0;
 
   found() {
     this.tokensFound++;
-    this.onTokenFound.emit(1);
+    this.parent.tokenFound(1);
   }
 
   lost() {
     this.tokensFound--;
-    this.onTokenFound.emit(-1);
+    this.parent.tokenFound(-1);
   }
 }

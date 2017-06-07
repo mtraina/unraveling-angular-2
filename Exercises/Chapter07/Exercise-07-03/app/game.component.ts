@@ -9,6 +9,10 @@ export class GameComponent {
   collected = 0;
   divers = ["Bob", "Cecile", "Jake"]
 
+  getMe(){
+    return this;
+  }
+
   tokenFound(newTokens: number) {
     this.collected += newTokens;
   }
