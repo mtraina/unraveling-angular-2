@@ -1,0 +1,85 @@
+<form *ngIf="!submitted" (ngSubmit)="submitForm()"
+  [formGroup]="diveLogForm" >
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group"
+        [class.has-error]="isInvalid('site')">
+        <label for="site">Dive site</label>
+        <input class="form-control" id="site"
+          formControlName="site" 
+          placeholder="dive site">
+        <span *ngIf="isInvalid('site')" class="help-block">
+          {{getValidationMessage('site')}}
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group"
+        [class.has-error]="isInvalid('location')">
+        <label for="location">Location</label>
+        <input class="form-control" id="location"
+          formControlName="location"
+          placeholder="location">
+        <span *ngIf="isInvalid('location')" class="help-block">
+          {{getValidationMessage('location')}}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group"
+        [class.has-error]="isInvalid('depth')">
+        <label for="depth">Max. depth</label>
+        <input class="form-control" id="depth"
+          formControlName="depth">
+        <span *ngIf="isInvalid('depth')" class="help-block">
+          {{getValidationMessage('depth')}}
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group"
+        [class.has-error]="isInvalid('time')">
+        <label for="time">Bottom time</label>
+        <input class="form-control" id="time"
+          formControlName="time">
+        <span *ngIf="isInvalid('time')" class="help-block">
+          {{getValidationMessage('time')}}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"
+        formControlName="isFavorite">
+      Mark as favorite
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Special dive</label>
+    <div class="radio"
+      *ngFor="let diveType of specialDives">
+      <label>
+        <input type="radio" [value]="diveType"
+        formControlName="special" >
+        {{diveType}}
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comments">Comments</label>
+    <textarea class="form-control" id="comments" rows="5"
+      formControlName="comments">
+    </textarea>
+  </div>
+  <button class="btn btn-primary" type="submit"
+    [disabled]="diveLogForm.invalid">
+    Submit
+  </button>
+</form>
+<div *ngIf="submitted">
+  <h2>The form has been submitted with this data:</h2>
+  <pre>{{submittedDive | json}}</pre>
+</div>
