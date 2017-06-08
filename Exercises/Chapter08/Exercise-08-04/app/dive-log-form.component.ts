@@ -3,7 +3,8 @@ import {DiveLogEntry} from './dive-log-entry';
 
 @Component({
   selector: 'dive-log-form',
-  templateUrl: 'app/dive-log-form.template.html'
+  templateUrl: 'app/dive-log-form.template.html',
+  styleUrls: ['app/dive-log-form.styles.css']
 })
 export class DiveLogFormComponent {
   specialDives = [
