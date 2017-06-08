@@ -1,0 +1,15 @@
+.ng-valid[required]{
+    border: 2px solid navy;
+}
+
+.ng-invalid:not(form){
+    border: 2px solid red;
+}
+
+.ng-dirty:not(form){
+    background-color: #e0e0e0;
+}
+
+.ng-pristine:not(form){
+    background-color: lightyellow;
+}
