@@ -5,6 +5,7 @@
         <label for="site">Dive site</label>
         <input class="form-control" id="site"
           [(ngModel)]="entry.site" name="site"
+          required
           placeholder="dive site">
       </div>
     </div>
@@ -13,6 +14,7 @@
         <label for="location">Location</label>
         <input class="form-control" id="location" 
           [(ngModel)]="entry.location" name="location"
+          required
           placeholder="location">
       </div>
     </div>
@@ -22,14 +24,14 @@
       <div class="form-group">
         <label for="depth">Max. depth</label>
         <input class="form-control" id="depth"
-          [(ngModel)]="entry.depth" name="depth">
+          [(ngModel)]="entry.depth" name="depth" required maxlength="3">
       </div>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
         <label for="time">Bottom time</label>
         <input class="form-control" id="time"
-         [(ngModel)]="entry.time" name="time">
+         [(ngModel)]="entry.time" name="time" required maxlength="3">
       </div>
     </div>
   </div>
