@@ -3,7 +3,8 @@
     <div class="col-sm-6">
       <div class="form-group">
         <label for="site">Dive site</label>
-        <input class="form-control" id="site" 
+        <input class="form-control" id="site"
+          [(ngModel)]="entry.site" name="site"
           placeholder="dive site">
       </div>
     </div>
@@ -11,6 +12,7 @@
       <div class="form-group">
         <label for="location">Location</label>
         <input class="form-control" id="location" 
+          [(ngModel)]="entry.location" name="location"
           placeholder="location">
       </div>
     </div>
@@ -19,19 +21,21 @@
     <div class="col-sm-3">
       <div class="form-group">
         <label for="depth">Max. depth</label>
-        <input class="form-control" id="depth">
+        <input class="form-control" id="depth"
+          [(ngModel)]="entry.depth" name="depth">
       </div>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
         <label for="time">Bottom time</label>
-        <input class="form-control" id="time">
+        <input class="form-control" id="time"
+         [(ngModel)]="entry.time" name="time">
       </div>
     </div>
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox" name="favorite" checked>
+      <input type="checkbox" name="isFavorite" [(ngModel)]="entry.isFavorite">
       Mark as favorite
     </label>
   </div>
@@ -40,16 +44,19 @@
     <div class="radio"
       *ngFor="let diveType of specialDives">
       <label>
-        <input type="radio" name="special" [value]="diveType">
+        <input type="radio" name="special" [value]="diveType"
+          [(ngModel)]="entry.specialh" name="special">
         {{diveType}}
       </label>
     </div>
   </div>
   <div class="form-group">
     <label for="comments">Comments</label>
-    <textarea class="form-control" id="comments" rows="5">
+    <textarea class="form-control" id="comments" rows="5"
+              [(ngModel)]="entry.comments" name="comments">
     </textarea>
   </div>
+  <pre>{{entry | json}}</pre>
   <button class="btn btn-primary" type="submit">
     Submit
   </button>
