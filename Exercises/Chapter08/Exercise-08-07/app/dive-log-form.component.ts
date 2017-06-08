@@ -7,6 +7,8 @@ import {DiveLogEntry} from './dive-log-entry';
   styleUrls: ['app/dive-log-form.styles.css']
 })
 export class DiveLogFormComponent {
+  submitted = false;
+
   specialDives = [
     "Night dive",
     "deep dive",
@@ -20,5 +22,9 @@ export class DiveLogFormComponent {
     time: 56,
     isFavorite: true,
     special: 'Deep dive'
+  }
+
+  submitForm(){
+    this.submitted = true;
   }
 }

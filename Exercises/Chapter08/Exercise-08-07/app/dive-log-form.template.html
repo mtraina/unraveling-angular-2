@@ -1,4 +1,4 @@
-<form>
+<form *ngIf="!submitted" novalidate (ngSubmit)="submitForm()" #entryForm="ngForm">
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group"
@@ -74,7 +74,11 @@
     </textarea>
   </div>
   <pre>{{entry | json}}</pre>
-  <button class="btn btn-primary" type="submit">
+  <button class="btn btn-primary" type="submit" [disabled]="entryForm.invalid">
     Submit
   </button>
 </form>
+<div *ngIf="submitted">
+  <h2>The form has been submitted with this data:</h2>
+  <pre>{{entry | json}}</pre>
+</div>
