@@ -8,7 +8,14 @@
           #siteCtrl="ngModel"
           [(ngModel)]="entry.site" name="site"
           required
+          pattern="[A-Za-z]*"
           placeholder="dive site">
+        <span *ngIf="siteCtrl.errors?.required" class="help-block">
+          Please specify a site name.
+        </span>
+        <span *ngIf="siteCtrl.errors?.pattern" class="help-block">
+          Please use only letter characters.
+        </span>
       </div>
     </div>
     <div class="col-sm-6">
