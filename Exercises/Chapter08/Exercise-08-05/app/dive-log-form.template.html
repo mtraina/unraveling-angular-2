@@ -1,18 +1,22 @@
 <form>
   <div class="row">
     <div class="col-sm-6">
-      <div class="form-group">
+      <div class="form-group"
+          [class.has-error]="siteCtrl.invalid">
         <label for="site">Dive site</label>
         <input class="form-control" id="site"
+          #siteCtrl="ngModel"
           [(ngModel)]="entry.site" name="site"
           required
           placeholder="dive site">
       </div>
     </div>
     <div class="col-sm-6">
-      <div class="form-group">
+      <div class="form-group" 
+          [class.has-error]="locationCtrl.invalid">
         <label for="location">Location</label>
         <input class="form-control" id="location" 
+          #locationCtrl="ngModel"
           [(ngModel)]="entry.location" name="location"
           required
           placeholder="location">
@@ -21,16 +25,20 @@
   </div>
   <div class="row">
     <div class="col-sm-3">
-      <div class="form-group">
+      <div class="form-group"
+          [class.has-error]="depthCtrl.invalid">
         <label for="depth">Max. depth</label>
         <input class="form-control" id="depth"
+          #depthCtrl="ngModel"
           [(ngModel)]="entry.depth" name="depth" required maxlength="3">
       </div>
     </div>
     <div class="col-sm-3">
-      <div class="form-group">
+      <div class="form-group"
+        [class.has-error]="timeCtrl.invalid">
         <label for="time">Bottom time</label>
         <input class="form-control" id="time"
+         #timeCtrl="ngModel"
          [(ngModel)]="entry.time" name="time" required maxlength="3">
       </div>
     </div>
