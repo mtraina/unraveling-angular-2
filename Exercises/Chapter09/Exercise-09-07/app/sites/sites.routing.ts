@@ -7,7 +7,7 @@ import {DeleteSiteComponent} from './delete-site.component';
 import {CanDeactivateGuard} from '../deactivable.guard';
 
 export const sitesRoutes: Routes = [{
-    path: 'sites',
+    path: '',
     component: SitesComponent,
     children: [
         { path: '', component: SiteListComponent },

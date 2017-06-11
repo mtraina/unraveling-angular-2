@@ -12,8 +12,8 @@ import {CanDeactivateGuard} from './deactivable.guard';
 const routes: Routes = [
   { path: 'divelogs', component: DiveLogComponent, canActivate: [LoggedInGuard] },
   { path: 'login', component: LoginComponent },
-  { path: '', pathMatch: 'full', component: WelcomeComponent },
-  ...sitesRoutes
+  { path: 'sites', loadChildren: 'app/sites/sites.module#SitesModule'},
+  { path: '', pathMatch: 'full', component: WelcomeComponent }
 ];
 
 export const routingProviders = [
