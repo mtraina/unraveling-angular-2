@@ -24,6 +24,6 @@ export class EditSiteComponent {
 
   save() {
     this.siteService.saveSite({id: this.siteId, name:this.siteName});
-    this.router.navigate(['/list']);
+    this.router.navigate(['..'], {relativeTo: this.route});
   }
 }

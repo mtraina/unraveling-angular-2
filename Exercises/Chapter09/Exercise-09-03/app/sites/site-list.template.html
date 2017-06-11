@@ -4,7 +4,7 @@
     <div class="col-sm-12"
       [style.margin-bottom.px]="12">
       <a class="btn btn-primary btn-lg"
-        routerLink="/add">
+        routerLink="add">
         Add new site
       </a>
     </div>
@@ -20,11 +20,11 @@
     <div class="col-sm-4" style="margin-top: 5px;">
       <div class="pull-right">
         <a class="btn btn-warning btn-sm"
-          [routerLink]="['/edit', site.id]">
+          [routerLink]="['edit', site.id]">
           Edit
         </a>
         <a class="btn btn-danger btn-sm"
-          [routerLink]="['/delete', site.id]">
+          [routerLink]="['delete', site.id]">
           Delete
         </a>
       </div>
