@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h1>My Numbers</h1>
+  <div class="row" style="margin-bottom: 12px;">
+    <div class="col-sm-2">
+      <input #startBox class="form-control input-lg"
+        placeholder="Start"
+        value="0"
+        (keyup)="start=toValue(startBox.value, 0)" />
+    </div>
+    <div class="col-sm-2">
+      <input #endBox class="form-control input-lg"
+        placeholder="End"
+        value="100"
+        (keyup)="end=toValue(endBox.value, null)" />
+    </div>
+  </div>
+  <span *ngFor="let num of numbers | slice:start:end"
+    class="number">
+    {{num}}
+  </span>
+</div>
