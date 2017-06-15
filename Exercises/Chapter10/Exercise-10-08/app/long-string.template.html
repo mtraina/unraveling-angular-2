@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h1>My Long String</h1>
+  <div class="row" style="margin-bottom: 12px;">
+    <div class="col-sm-2">
+      <input #startBox class="form-control input-lg"
+        placeholder="Start"
+        value="0"
+        (keyup)="start=toValue(startBox.value, 0)" />
+    </div>
+    <div class="col-sm-2">
+      <input #endBox class="form-control input-lg"
+        placeholder="End"
+        value="1000"
+        (keyup)="end=toValue(endBox.value, null)" />
+    </div>
+  </div>
+  <span class="longstring">
+    {{longString | slice:start:end}}
+  </span>
+</div>
