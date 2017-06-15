@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {DiveLogComponent} from './dive-log.component';
+import {DiveInfoComponent} from './dive-info.component';
 
 @NgModule({
   imports: [BrowserModule],
-  declarations: [DiveLogComponent],
-  bootstrap: [DiveLogComponent]
+  declarations: [DiveInfoComponent],
+  bootstrap: [DiveInfoComponent]
 })
 export class AppModule { }
