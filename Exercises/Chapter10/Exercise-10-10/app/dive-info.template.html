@@ -18,7 +18,7 @@
       *ngFor="let dive of dives">
       <h3>{{dive.site | uppercase}}</h3>
       <h4>{{dive.location | lowercase}}</h4>
-      <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+      <h2>{{dive | diveData: ' :: '}}</h2>
     </div>
   </div>
 </div>
